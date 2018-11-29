@@ -73,6 +73,11 @@ public  class adapter extends RecyclerView.Adapter<adapter.MyViewHolder> {
         return datas.size();
     }
 
+    public bean getItem(int position){
+
+        return datas.get(position);
+    }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
