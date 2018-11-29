@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+
+    <EditText
+
+        android:id="@+id/thingsToDo"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:hint="things to do ……"
+        />
+
+    <EditText
+
+        android:id="@+id/remark"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="300dp"
+
+        android:hint="备注……"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation = "horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Set the level"
+            android:layout_weight="1"/>
+        <Spinner
+
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+
+            android:id="@+id/selectLevel"
+
+            android:entries="@array/languages"
+            android:layout_weight="1"
+
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation = "horizontal">
+        <Button
+
+            android:text="设置提醒"
+            android:id="@+id/alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="alarm"
+            />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
