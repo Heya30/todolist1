@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentTop="true"
-            android:background="@color/design_default_color_primary"
+            android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
 
             />
@@ -50,8 +50,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:onClick="add"
-            android:src="@mipmap/ok"
-            app:backgroundTint="@android:color/black" />
+            android:src="@mipmap/add"
+            app:backgroundTint="?attr/colorBackgroundFloating" />
 
 
 
