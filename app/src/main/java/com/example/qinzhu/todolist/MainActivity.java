@@ -185,7 +185,8 @@ public class MainActivity  extends AppCompatActivity {
         public boolean onMove(int startPosition, int endPosition) {
 
             adapter.notifyItemMoved(startPosition,endPosition);
-            ;
+            adapter.swop(startPosition,endPosition);
+            
 
 
             return true;
