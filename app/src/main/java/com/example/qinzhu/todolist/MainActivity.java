@@ -58,8 +58,7 @@ public class MainActivity  extends AppCompatActivity {
 
         recyclerview.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
-        recyclerview.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
+//        recyclerview.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         adapter.AlterClickListener onItemActionClick = new adapter.AlterClickListener() {
 
@@ -67,18 +66,11 @@ public class MainActivity  extends AppCompatActivity {
             public void OnAlterClick(bean bean_init, int position) {
 
                 bean bean = bean_init;
-
-                int num = position;
-
-                Toast.makeText(MainActivity.this, bean.getTodo(), Toast.LENGTH_LONG).show();
-
-
                 intentAlter = new Intent(MainActivity.this, alter.class);
                 intentAlter.putExtra("init", bean);
                 startActivityForResult(intentAlter, 2);
                 adapter.removeData(position);
-                DataSupport.delete(bean.class,position);
-
+                DataSupport.deleteAll(bean.class, "todo = ?", bean.getTodo());
 
 
             }
@@ -179,8 +171,12 @@ public class MainActivity  extends AppCompatActivity {
         public void onSwiped(int position) {
 
             if(datas != null){
+
+                bean beanGet = adapter.getItem(position);
+
+                DataSupport.deleteAll(bean.class, "todo = ?", beanGet.getTodo());
+
                 adapter.removeData(position);
-                DataSupport.delete(bean.class, position);
             }
 
         }
@@ -189,6 +185,7 @@ public class MainActivity  extends AppCompatActivity {
         public boolean onMove(int startPosition, int endPosition) {
 
             adapter.notifyItemMoved(startPosition,endPosition);
+            datas.swap(startPosition,endPosition);
 
             return true;
         }
