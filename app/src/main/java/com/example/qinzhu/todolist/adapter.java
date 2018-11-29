@@ -109,6 +109,16 @@ public  class adapter extends RecyclerView.Adapter<adapter.MyViewHolder> {
 
     }
 
+    public  void swop(int start ,int end){
+
+        bean beanTemp = datas.get(start);
+
+        datas.set(start,datas.get(end));
+        datas.set(end,beanTemp);
+
+    }
+
+
     public void removeData(int position) {
 
         datas.remove(position);
