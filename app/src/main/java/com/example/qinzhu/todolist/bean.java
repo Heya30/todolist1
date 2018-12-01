@@ -3,12 +3,22 @@ package com.example.qinzhu.todolist;
 import org.litepal.crud.DataSupport;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 public class bean extends DataSupport implements Serializable {
     private int num ;
     private String todo;
     private String remark;
     private int level;
+    private Calendar time;
+
+    public Calendar getTime() {
+        return time;
+    }
+
+    public void setTime(Calendar time) {
+        this.time = time;
+    }
 
     public String getRemark() {
         return remark;
