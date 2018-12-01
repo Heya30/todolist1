@@ -186,7 +186,7 @@ public class MainActivity  extends AppCompatActivity {
 
             adapter.notifyItemMoved(startPosition,endPosition);
             adapter.swop(startPosition,endPosition);
-            
+
 
 
             return true;
